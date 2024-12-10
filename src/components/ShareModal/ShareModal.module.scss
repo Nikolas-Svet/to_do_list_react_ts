@@ -1,0 +1,51 @@
+// Стиль для класса window находится в styles/components/_window.scss
+
+.move-bottom {
+  align-items: flex-end !important;
+}
+
+.window {
+  &__share {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 360px;
+    width: 100%;
+    padding: 18px;
+    background-color: $color-background;
+    border-radius: $border-radius-large $border-radius-large 0 0;
+
+    div {
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      background-color: $background-item;
+      outline: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        opacity: 0.8;
+      }
+      a {
+        height: 16px;
+        width: 36px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      img {
+        width: 21px;
+        height: 21px;
+
+        &:last-child {
+          height: 16px;
+        }
+      }
+    }
+  }
+}

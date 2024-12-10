@@ -1,0 +1,8 @@
+.task-item {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,35 @@
+// Стиль для класса window находится в styles/components/_window.scss
+
+.window {
+  &__edit {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 360px;
+    width: 100%;
+    padding: 18px;
+    background-color: $color-background;
+    border-radius: $border-radius-large $border-radius-large 0 0;
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        &:first-child {
+          height: 32px !important;
+        }
+
+        &:nth-child(2) {
+          height: 343px !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+.input {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  margin-bottom: 6px;
+}
+.input:last-child {
+  margin-bottom: 0;
+}
+.input input, .input textarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 1px solid #FF8303;
+  border-radius: 4px;
+  background-color: #242320;
+  color: #F0E3CA;
+  display: block;
+  box-sizing: border-box;
+  transition: 0.2s;
+  outline: none;
+}
+.input textarea {
+  resize: none;
+}
+.input input:focus, .input textarea:focus {
+  box-shadow: 0 0 5px 2px rgba(245, 241, 241, 0.15);
+}
+.input input:focus + label,
+.input input:not(:placeholder-shown) + label,
+.input textarea:focus + label,
+.input textarea:not(:placeholder-shown) + label {
+  display: none;
+}
+.input label {
+  position: absolute;
+  left: 14px;
+  top: -10px;
+  padding: 16px 0;
+  color: rgba(240, 227, 202, 0.6392156863);
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.add_task {
+  min-width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border: 1px solid #FF8303;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border 0.2s;
+  min-width: 70px;
+  position: relative;
+}
+.add_task:hover {
+  border-color: rgba(255, 131, 3, 0.8);
+}
+.add_task:after, .add_task:before {
+  content: "";
+  width: 24px;
+  height: 3px;
+  background-color: #FF8303;
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.add_task:hover {
+  border-color: rgba(255, 131, 3, 0.8);
+}
+.add_task:after {
+  transform: translate(-50%, -50%);
+}
+.add_task:before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.cancel {
+  min-width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: 1px solid #FF8303;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border 0.2s;
+  position: relative;
+  margin-right: 16px;
+}
+.cancel:hover {
+  border-color: rgba(255, 131, 3, 0.8);
+}
+.cancel:hover {
+  border-color: rgba(255, 131, 3, 0.8);
+}
+.cancel:after, .cancel:before {
+  content: "";
+  width: 11px;
+  height: 1px;
+  background-color: #FF8303;
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cancel:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.cancel:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.window {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.window__wrap {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(7, 7, 7, 0.8901960784);
+  z-index: 1;
+}
+.window:nth-child(3), .window:nth-child(4) {
+  align-items: end;
+}
+
+.default_button_for_window {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 140px;
+}
+.default_button_for_window button {
+  width: 45%;
+  height: 24px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #D9D9D9;
+  background-color: #242320;
+  border-radius: 4px;
+  border: 1px solid #A35709;
+}
+.default_button_for_window button:hover {
+  border: 1px solid #FF8303;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #1B1A17;
+}
+
+.container {
+  min-height: calc(100vh - 64px);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: 0 0 5px 2px rgba(75, 74, 74, 0.66);
+}
+.container__wrap {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1B1A17;
+}
+
+@media (max-width: 767px) {
+  .container {
+    box-shadow: none;
+    min-height: 100vh;
+    max-width: none;
+  }
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter.ttf") format("truetype");
+}
+
+/*# sourceMappingURL=styles.css.map */

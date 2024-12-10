@@ -1,0 +1,45 @@
+.window {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &__wrap {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(7, 7, 7, 0.8901960784);
+    z-index: 1;
+  }
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    align-items: end;
+  }
+}
+
+.default_button_for_window {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 140px;
+
+  button {
+    width: 45%;
+    height: 24px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #D9D9D9;
+    background-color: #242320;
+    border-radius: $border-radius-small;
+    border: 1px solid $color-primary2;
+
+    &:hover {
+      box-shadow: 0 0 5px 1px $color-primary !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.to_do_list {
+  &__title {
+    width: 100%;
+    margin-bottom: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    form {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      div {
+        flex: 1;
+      }
+    }
+  }
+}
