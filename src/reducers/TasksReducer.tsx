@@ -1,10 +1,14 @@
-import { getTasksFromLocalStorage } from '../utils/Storage'
+import { Task } from '@/types/types'
 
-const initialState = {
-  tasks: getTasksFromLocalStorage()
+interface TaskState {
+  tasks: Task[]
 }
 
-export default function tasksReducer(state = initialState, action) {
+const initialState: TaskState = {
+  tasks: []
+}
+
+export default function tasksReducer(state = initialState, action: any): TaskState {
   switch (action.type) {
     case 'ADD_TASK':
       return {
@@ -19,9 +23,7 @@ export default function tasksReducer(state = initialState, action) {
     case 'UPDATE_TASK':
       return {
         ...state,
-        tasks: state.tasks.map((task) =>
-          task.id === action.payload.id ? action.payload : task
-        )
+        tasks: state.tasks.map((task) => (task.id === action.payload.id ? action.payload : task))
       }
     case 'MOVE_TASK':
       return {

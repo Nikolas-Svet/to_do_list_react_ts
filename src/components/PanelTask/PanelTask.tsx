@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, FormEvent } from 'react'
 import styles from './TaskForm.module.scss'
+import { Task } from '@/types/types'
 
-function TaskForm({ addTask }) {
+interface TaskFormProps {
+  addTask: (task: Task) => void
+}
+
+const TaskForm: React.FC<TaskFormProps> = ({ addTask }) => {
   const [title, setTitle] = useState('')
   const [about, setAbout] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (title.trim() && about.trim()) {
-      const newTask = {
+      const newTask: Task = {
         id: '_' + Math.random().toString(36).substr(2, 9),
         title,
         about
@@ -46,11 +51,9 @@ function TaskForm({ addTask }) {
             <label>About...</label>
           </div>
         </div>
-        <button type="submit" className="add_task">
-        </button>
+        <button type="submit" className="add_task"></button>
       </form>
     </div>
   )
 }
-
 export default TaskForm

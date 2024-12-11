@@ -1,7 +1,13 @@
 import React from 'react'
+import { Task } from '@/types/types'
 import styles from './InfoModal.module.scss'
 
-function InfoModal({ task, onClose }) {
+interface InfoModalProps {
+  task: Task
+  onClose: () => void
+}
+
+const InfoModal: React.FC<InfoModalProps> = ({ task, onClose }) => {
   return (
     <div className="window">
       <div className="window__wrap" onClick={onClose}></div>

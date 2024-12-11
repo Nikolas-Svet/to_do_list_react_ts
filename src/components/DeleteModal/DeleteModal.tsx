@@ -1,7 +1,12 @@
 import React from 'react'
 import styles from './DeleteModal.module.scss'
 
-function DeleteModal({ onConfirm, onCancel }) {
+interface DeleteModalProps {
+  onConfirm: () => void
+  onCancel: () => void
+}
+
+const DeleteModal: React.FC<DeleteModalProps> = ({ onConfirm, onCancel }) => {
   return (
     <div className="window">
       <div className="window__wrap" onClick={onCancel}></div>

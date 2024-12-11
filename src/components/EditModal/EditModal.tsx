@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, FormEvent } from 'react'
+import { Task } from '@/types/types'
 import styles from './EditModal.module.scss'
 
-function EditModal({ task, updateTask, onClose }) {
+interface EditModalProps {
+  task: Task
+  updateTask: (task: Task) => void
+  onClose: () => void
+}
+
+const EditModal: React.FC<EditModalProps> = ({ task, updateTask, onClose }) => {
   const [title, setTitle] = useState(task.title)
   const [about, setAbout] = useState(task.about)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (title.trim() && about.trim()) {
       updateTask({ ...task, title, about })
